@@ -1,24 +1,24 @@
 import { useState } from "react";
 import { io } from "socket.io-client";
-import { DeviceStatusType } from "../../types/deviceStatus";
+import { DeviceType } from "../../types/device";
 
 const useSocket = () => {
-  const [data, setData] = useState<DeviceStatusType[]>([]);
+  const [data, setData] = useState<DeviceType[]>([]);
   const [status, setStatus] = useState<"connected" | "disconnected">(
     "disconnected"
   );
 
-  const socket = io(process.env.REACT_APP_BASE_URL, {
+  const socket = io(import.meta.env.VITE_BASE_URL, {
     autoConnect: false,
     forceNew: true,
-    transports: ["websocket", "polling"],
+    transports: ["websocket"],
   });
 
   const connect = () => {
     if (status === "disconnected") {
       socket.connect();
       setStatus("connected");
-      socket.on("update", (data: DeviceStatusType[]) => {
+      socket.on("update", (data: DeviceType[]) => {
         setData(data);
       });
     }

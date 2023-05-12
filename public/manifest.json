@@ -8,26 +8,26 @@
       "type": "image/x-icon"
     },
     {
-      "src": "192x192.png",
-      "type": "image/png",
+      "src": "192x192.webp",
+      "type": "image/webp",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "512x512.png",
-      "type": "image/png",
+      "src": "512x512.webp",
+      "type": "image/webp",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "192x192.png",
-      "type": "image/png",
+      "src": "192x192.webp",
+      "type": "image/webp",
       "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "512x512.png",
-      "type": "image/png",
+      "src": "512x512.webp",
+      "type": "image/webp",
       "sizes": "512x512",
       "purpose": "maskable"
     }
@@ -35,6 +35,6 @@
   "scope": ".",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#ffffff",
+  "theme_color": "#AE85EA",
   "background_color": "#ffffff"
 }
