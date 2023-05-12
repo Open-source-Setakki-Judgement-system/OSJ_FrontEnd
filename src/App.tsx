@@ -1,20 +1,18 @@
 import useSocket from "./hooks/useSocket";
 
 function App() {
-  const { dataArr, isConnected, connect, disconnect } = useSocket();
+  const { data, status, connect, disconnect } = useSocket();
 
   return (
     <>
-      <h1>{isConnected ? "연결됨" : "연결되지 않음"}</h1>
-      {isConnected ? (
-        <button onClick={disconnect}>소켓 서버 퇴장</button>
-      ) : (
-        <button onClick={connect}>소켓 서버 접속</button>
-      )}
-      <br />
+      <h1>{status}</h1>
+      <button onClick={connect}>소켓 서버 접속</button>
+      <button onClick={disconnect}>소켓 서버 퇴장</button>
       <ul>
-        {dataArr.map((v, i) => (
-          <li key={`socketMessage${i}`}>{v}</li>
+        {data.map((v) => (
+          <li key={`${v.device_type}${v.id}`}>
+            {`${v.id}: ${v.state === 1 ? "GRN" : " RED"}`}
+          </li>
         ))}
       </ul>
     </>
