@@ -4,24 +4,29 @@ const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
+
+        width: max-content;
         
         font-family: "Pretendard";
-        line-height: 100%;
+        font-weight: 400;
+        line-height: 150%;
         
         box-sizing: border-box;
     }
 
     html, body {
-        max-width: 100%;
-        max-height: 100%;
+        background-color: ${({ theme }) => theme.colors.background1};
 
-        overflow: hidden;
+        max-width: 100%; 
+
+        overflow-x: hidden;
     }
 
     img {
         -webkit-user-drag: none;
         -moz-user-drag: none;
         -ms-user-drag: none;
+        -webkit-user-select: none;
         user-select: none;
     }
 
@@ -31,20 +36,20 @@ const GlobalStyle = createGlobalStyle`
         border: none;
     }
 
-    h1 {
-        font-size: ${({ theme }) => theme.fontSizes.title};
-    }
+    picture {
+        display: flex;
+    } 
 
     h2 {
-        font-size: ${({ theme }) => theme.fontSizes.subTitle};
+        font-size: ${(props) => props.theme.fontSizes.subTitle};
     }
 
     button, input, p {
-        font-size: ${({ theme }) => theme.fontSizes.text};
+        font-size: ${(props) => props.theme.fontSizes.text};
     }
 
     span {
-        font-size: ${({ theme }) => theme.fontSizes.description};
+        font-size: ${(props) => props.theme.fontSizes.subText};
     }
 `;
 
